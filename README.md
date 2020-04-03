@@ -33,6 +33,8 @@ day Date        Confirmed     Suspected
  19 2020-04-01          62           61
  20 2020-04-01          65           70
 ```
+![SEIR Model COVID-19](/img/seir-interpolation.png)
+
 ## About SEIR Model for COVID 19
 SEIR is a deterministic mathematical model for epidemics. It is currently used to analyze the behavior of the COVID-19 pandemic.
 
@@ -67,5 +69,5 @@ R0     = 0
 S0     = N - I0 - R0 - E0
 Beta   = 1.49
 Gamma  = 1./5
-Sigma   = 1./7
+Sigma  = 1./7
 ```

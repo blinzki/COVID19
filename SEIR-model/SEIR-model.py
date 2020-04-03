@@ -9,8 +9,8 @@ from pylab import *
 # 03/2020
 
 # Chart config
-y_axis = 1100000
-x_axis =90 
+y_axis = 90 
+x_axis = 20 
 
 # Model parameters 
 N = 992323 
