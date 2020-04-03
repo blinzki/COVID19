@@ -36,7 +36,7 @@ day Date        Confirmed     Suspected
 ## About SEIR Model for COVID 19
 SEIR is a deterministic mathematical model for epidemics. It is currently used to analyze the behavior of the COVID-19 pandemic.
 
-Four types of population stages are modeled: Those that are susceptible to contracting the disease (S), those that acquired it and are in an asymptomatic incubation period (E), the confirmed infected (I), and the recovered or dead population.
+Four types of population stages are modeled: Those that are susceptible to contracting the disease S(t), those that acquired it and are in an asymptomatic incubation period E(t), the confirmed infected I(t), and the recovered or dead population R(t).
 
 ![SEIR Model COVID-19](/img/seir-blocks.png)
 
@@ -44,3 +44,12 @@ The following differential equations model the behavior of the disease over time
 
 ![SEIR Model COVID-19](/img/seir-diffeq.png)
 
+There are three important parameters of the model:
+
+Beta:  Transmission rate.
+Gamma: Recovery rate.
+Sigma: The rate at which an exposed person becomes infective.  
+
+The most important indicator is the Basic Reproduction Rate (R0), which represents the number of new infected produced by a single infected if the entire population is susceptible.
+
+![SEIR Model COVID-19](/img/seir-r0.png)
