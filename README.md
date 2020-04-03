@@ -55,3 +55,15 @@ There are three important parameters of the model:
 The most important indicator is the Basic Reproduction Rate (R0), which represents the number of new infected produced by a single infected if the entire population is susceptible.
 
 ![SEIR Model COVID-19](/img/seir-r0.png)
+
+
+The initial conditions for the model to the model of the city of Rosario are:
+
+```
+S0     =
+E0     =
+I0     =
+R0     =
+Beta   =
+Gamma  =
+```
