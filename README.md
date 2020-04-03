@@ -60,10 +60,12 @@ The most important indicator is the Basic Reproduction Rate (R0), which represen
 The initial conditions for the model to the model of the city of Rosario are:
 
 ```
-S0     =
-E0     =
-I0     =
-R0     =
-Beta   =
-Gamma  =
+N      = 992323
+E0     = 0
+I0     = 1
+R0     = 0
+S0     = N - I0 - R0 - E0
+Beta   = 1.49
+Gamma  = 1./5
+Sigma   = 1./7
 ```
