@@ -92,5 +92,5 @@ S(0)     = N - I0 - R0 - E0
 Beta     = 1.30
 Gamma    = 1./5
 Sigma    = 1./7
-R0       = Beta / Gamma = 6.5
+R0       = Beta / Gamma = 6.50
 ```
