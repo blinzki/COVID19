@@ -47,6 +47,7 @@ The following differential equations model the behavior of the disease over time
 There are three important parameters of the model:
 
 Beta:  Transmission rate.
+
 Gamma: Recovery rate.
 Sigma: The rate at which an exposed person becomes infective.  
 
