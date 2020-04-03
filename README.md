@@ -3,6 +3,8 @@
 Evolution of COVID 19 - Official reports
 Rosario, Santa Fe, Argentina
 
+![SEIR Model COVID-19](/img/seir-covid19.png)
+
 ```
 COVID 19
 Rosario, Argentina
