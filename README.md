@@ -40,3 +40,7 @@ Four types of population stages are modeled: Those that are susceptible to contr
 
 ![SEIR Model COVID-19](/img/seir-blocks.png)
 
+The following differential equations model the behavior of the disease over time.
+
+![SEIR Model COVID-19](/img/seir-diffeq.png)
+
