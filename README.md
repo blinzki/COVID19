@@ -40,3 +40,4 @@ Four types of population stages are modeled: Those that are susceptible to contr
 
 
 ![SEIR Model COVID-19](/img/seir-blocks.png)
+
