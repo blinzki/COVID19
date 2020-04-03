@@ -14,9 +14,6 @@ Rosario, Santa Fe, Argentina
 
 ## Data COVID-19
 
-You can find the official reports here: ![Official data COVID-19](/reports)
-
-
 ```
 Rosario, Argentina
 Country Code:AR
@@ -47,6 +44,9 @@ day Date        Confirmed     Suspected   R0_R    R_P       Prediction
  19 2020-04-04           -            -      -   7.45         89
  20 2020-04-05           -            -      -   7.45        119
 ```
+
+You can find the official reports here: ![Official data COVID-19](/reports)
+
 ## Real data interpolation
 
 It is very important to monitor the progress of the disease with confirmed cases to project the curve day by day and observe the behavior of the basic rate of reproduction.
