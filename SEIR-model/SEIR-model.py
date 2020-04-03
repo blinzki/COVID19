@@ -2,8 +2,9 @@ import numpy as np
 from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 from pylab import *
+from datetime import datetime, timedelta
+import math
 
-# SEIR Model
 # Pablo Eduardo Romero Oestreicher
 # ing.pabloeromero@gmail.com
 # 03/2020
@@ -46,7 +47,10 @@ S, E, I, R = ret.T
 
 # Print predictions
 for i in range(x_axis):
-    print(i, I[i], sep='\t')
+    initd = '2020-03-14'
+    date = datetime.strptime(initd, "%Y-%m-%d")
+    d = date + timedelta(days=i)
+    print(i,str(d.strftime("%Y-%m-%d")), math.floor(I[i]), sep='\t')
 
 # Plot the data curves: S(t), E(t), I(t) and R(t)
 fig = plt.figure(facecolor='w')

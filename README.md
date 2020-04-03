@@ -38,11 +38,12 @@ day Date        Confirmed     Suspected   R0_R    R_P          Prediction
  17 2020-03-31          55           35      -      -          -
  18 2020-04-01          62           61      -      -          -
  19 2020-04-02          65           70   6.50      -          -
- 20 2020-04-03           -            -      -   6.50         90
- 21 2020-04-04           -            -      -   6.50        117
- 22 2020-04-05           -            -      -   6.50        152
+ 20 2020-04-03           -            -      -   6.50         89
+ 21 2020-04-04           -            -      -   6.50        116
+ 22 2020-04-05           -            -      -   6.50        150
  ---------------------------------------------------------------
-
+ 30 2020-04-13                        -      -   6.50       1129   
+ 39 2020-04-22          -             -      -   6.50      12590
 ```
 
 You can find the official reports here: ![Official data COVID-19](/reports)
@@ -51,11 +52,11 @@ You can find the official reports here: ![Official data COVID-19](/reports)
 
 It is very important to monitor the progress of the disease with confirmed cases to project the curve day by day and observe the behavior of the basic rate of reproduction.
 
-For this, iterations are performed on the model for different values ​​of the Beta parameter. R0_0 is the real Basic Reproduction Rate for the interpolation. R0_P is the value of the projected Basic Reproduction Rate for the last known beta.
+For this, iterations are performed on the model for different values ​​of the Beta parameter. R0_0 is the real Basic Reproduction Rate for the interpolati  on. R0_P is the value of the projected Basic Reproduction Rate for the last known beta.
 
 ![SEIR Model COVID-19](/img/seir-interpolation.png)
 
-## About SEIR Model for COVID 19
+## About SEIR model for COVID 19
 SEIR is a deterministic mathematical model for epidemics. It is currently used to analyze the behavior of the COVID-19 pandemic.
 
 Four types of population stages are modeled: Those that are susceptible to contracting the disease S(t), those that acquired it and are in an asymptomatic incubation period E(t), the confirmed infected I(t), and the recovered or dead population R(t).
