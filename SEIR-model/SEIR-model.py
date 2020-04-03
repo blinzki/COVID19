@@ -44,6 +44,9 @@ x = [1, 1, 1, 1, 1, 2, 2, 2, 2, 8, 8, 11, 13, 21, 24, 33, 48, 55, 62, 65]
 ret = odeint(deriv, y0, t, args=(N, beta, gamma, sigma))
 S, E, I, R = ret.T
 
+# Print predictions
+print(I)
+
 # Plot the data curves: S(t), E(t), I(t) and R(t)
 fig = plt.figure(facecolor='w')
 ax = fig.add_subplot(111,  axisbelow=True)

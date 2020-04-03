@@ -18,33 +18,36 @@ Rosario, Argentina
 Country Code:AR
 City Code   :2000
 
-day Date        Confirmed     Suspected     R0
- 01 2020-03-14           1            0      -    
- 02 2020-03-15           1            0      -   
- 03 2020-03-16           1            0      -
- 04 2020-03-17           1           12      -
- 05 2020-03-18           1           22      -
- 06 2020-03-19           2           15      -
- 07 2020-03-20           2           14      -
- 08 2020-03-21           2           25      -
- 09 2020-03-22           2           23      -
- 10 2020-03-23           8           19      -
- 11 2020-03-24           8           26      -
- 12 2020-03-25          11           24      -
- 13 2020-03-26          13           24      -
- 14 2020-03-27          21           23      -
- 15 2020-03-28          24           24      -
- 16 2020-03-29          33           28      -
- 17 2020-03-30          48           29      -
- 18 2020-03-31          55           35      -
- 19 2020-04-01          62           61      -
- 20 2020-04-02          65           70   7.45
+day Date        Confirmed     Suspected   R0_R    R_P       Prediction
+ 01 2020-03-14           1            0      -      -          -
+ 02 2020-03-15           1            0      -      -          -
+ 03 2020-03-16           1            0      -      -          -
+ 04 2020-03-17           1           12      -      -          -
+ 05 2020-03-18           1           22      -      -          -
+ 06 2020-03-19           2           15      -      -          -
+ 07 2020-03-20           2           14      -      -          -
+ 08 2020-03-21           2           25      -      -          -
+ 09 2020-03-22           2           23      -      -          -
+ 10 2020-03-23           8           19      -      -          -
+ 11 2020-03-24           8           26      -      -          -
+ 12 2020-03-25          11           24      -      -          -
+ 13 2020-03-26          13           24      -      -          -
+ 14 2020-03-27          21           23      -      -          -
+ 15 2020-03-28          24           24      -      -          -
+ 16 2020-03-29          33           28      -      -          -
+ 17 2020-03-30          48           29      -      -          -
+ 18 2020-03-31          55           35      -      -          -
+ 19 2020-04-01          62           61      -      -          -
+ 20 2020-04-02          65           70   7.45      -          -
+ 18 2020-04-03           -            -      -   7.45         67
+ 19 2020-04-04           -            -      -   7.45         89
+ 20 2020-04-05           -            -      -   7.45        119
 ```
 ## Real data interpolation
 
 It is very important to monitor the progress of the disease with confirmed cases to project the curve day by day and observe the behavior of the basic rate of reproduction.
 
-For this, iterations are performed on the model for different values ​​of the parameters
+For this, iterations are performed on the model for different values ​​of the Beta parameter. R0_0 is the real Basic Reproduction Rate for the interpolation. R0_P is the value of the projected Basic Reproduction Rate for the last known beta.
 
 ![SEIR Model COVID-19](/img/seir-interpolation.png)
 
