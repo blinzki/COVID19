@@ -9,8 +9,8 @@ from pylab import *
 # 03/2020
 
 # Chart config
-y_axis = 1200000
-x_axis = 360
+y_axis = 1100000
+x_axis =90 
 
 # Model parameters 
 N = 992323 
@@ -47,6 +47,7 @@ S, E, I, R = ret.T
 # Plot the data curves: S(t), E(t), I(t) and R(t)
 fig = plt.figure(facecolor='w')
 ax = fig.add_subplot(111,  axisbelow=True)
+ax.set_title('Rosario SEIR Model COVID-19')
 ax.plot(t, S, 'b', alpha=0.5, lw=1, label='Susceptible')
 ax.plot(t, E, 'y', alpha=0.5, lw=1, label='Exposed')
 ax.plot(t, I, 'r', alpha=0.5, lw=2, label='Infected')
