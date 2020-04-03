@@ -33,6 +33,12 @@ day Date        Confirmed     Suspected
  19 2020-04-01          62           61
  20 2020-04-01          65           70
 ```
+## Real data interpolation
+
+It is very important to monitor the progress of the disease with confirmed cases to project the curve day by day and observe the behavior of the basic rate of reproduction.
+
+For this, iterations are performed on the model for different values ​​of the parameters
+
 ![SEIR Model COVID-19](/img/seir-interpolation.png)
 
 ## About SEIR Model for COVID 19
