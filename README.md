@@ -49,6 +49,7 @@ There are three important parameters of the model:
 Beta:  Transmission rate.
 
 Gamma: Recovery rate.
+
 Sigma: The rate at which an exposed person becomes infective.  
 
 The most important indicator is the Basic Reproduction Rate (R0), which represents the number of new infected produced by a single infected if the entire population is susceptible.
