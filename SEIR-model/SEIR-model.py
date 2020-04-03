@@ -3,18 +3,18 @@ from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 from pylab import *
 
-# SEIR Model 
+# SEIR Model
 # Pablo Eduardo Romero Oestreicher
 # ing.pabloeromero@gmail.com
 # 03/2020
 
 # Chart config
-y_axis = 90 
-x_axis = 20 
+y_axis = 1000000
+x_axis = 120
 
-# Model parameters 
-N = 992323 
-beta = 1.40
+# Model parameters
+N = 992323
+beta = 1.3
 gamma = 1./5
 sigma = 1./7
 
@@ -22,7 +22,7 @@ sigma = 1./7
 I0, R0, E0 = 1, 0, 0
 S0 = N - I0 - R0 - E0
 
-# Grid of time 
+# Grid of time
 t = np.linspace(0, x_axis, x_axis)
 
 # The SEIR model differential equations.
@@ -37,7 +37,7 @@ def deriv(y, t, N, beta, gamma, sigma):
 # Initial conditions vector
 y0 = S0, E0, I0, R0
 
-# Real data 
+# Real data
 x = [1, 1, 1, 1, 1, 2, 2, 2, 2, 8, 8, 11, 13, 21, 24, 33, 48, 55, 62, 65]
 
 # Integrate the SEIR equations over the time grid, t.
@@ -45,7 +45,8 @@ ret = odeint(deriv, y0, t, args=(N, beta, gamma, sigma))
 S, E, I, R = ret.T
 
 # Print predictions
-print(I)
+for i in range(x_axis):
+    print(i, I[i], sep='\t')
 
 # Plot the data curves: S(t), E(t), I(t) and R(t)
 fig = plt.figure(facecolor='w')
@@ -60,7 +61,7 @@ ax.set_xlabel('Time/days')
 ax.set_ylabel('Number')
 ax.set_ylim(0,y_axis)
 ax.yaxis.set_tick_params(length=0)
-ax.xaxis.set_tick_params(length=0)
+ax.xaxis.set_tick_params(length=1)
 ax.grid(b=True, which='major', c='w', lw=2, ls='-')
 legend = ax.legend()
 legend.get_frame().set_alpha(0.5)
