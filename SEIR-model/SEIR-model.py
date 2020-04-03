@@ -14,7 +14,7 @@ x_axis = 360
 
 # Model parameters 
 N = 992323 
-beta = 1.42
+beta = 1.40
 gamma = 1./5
 sigma = 1./7
 
