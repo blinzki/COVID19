@@ -1,7 +1,8 @@
-# ROSARIO COVID-19
+# Rosario COVID-19
 
-Author        : Ing. Pablo Eduardo Romero Oestreicher
-Last Update   : 04/03/20  
+>Author        : Ing. Pablo Eduardo Romero Oestreicher
+
+>Last Update   : 04/03/20  
 
 Evolution of COVID 19 - Official reports
 Rosario, Santa Fe, Argentina
