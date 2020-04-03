@@ -33,3 +33,5 @@ day Date        Confirmed     Suspected
  19 2020-04-01          62           61
  20 2020-04-01          65           70
 ```
+## About SEIR Model for COVID 19
+
