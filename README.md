@@ -13,8 +13,8 @@ Rosario, Santa Fe, Argentina
 ![SEIR Model COVID-19](/img/seir-covid19.png)
 
 ```
-COVID 19
-Rosario, Argentina
+Data COVID-19
+**Rosario, Argentina**
 Country Code:AR
 City Code   :2000
 
