@@ -12,11 +12,9 @@ Rosario, Santa Fe, Argentina
 
 ![SEIR Model COVID-19](/img/seir-covid19.png)
 
-#Data COVID-19
+## Data COVID-19
 
-you can find the official reports in the "reports" folder
-
-![Official data COVID-19](/reports)
+You can find the official reports here: ![Official data COVID-19](/reports)
 
 
 ```
