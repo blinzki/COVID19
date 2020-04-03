@@ -38,6 +38,5 @@ SEIR is a deterministic mathematical model for epidemics. It is currently used t
 
 Four types of population stages are modeled: Those that are susceptible to contracting the disease (S), those that acquired it and are in an asymptomatic incubation period (E), the confirmed infected (I), and the recovered or dead population.
 
-
 ![SEIR Model COVID-19](/img/seir-blocks.png)
 
