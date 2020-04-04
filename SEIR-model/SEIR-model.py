@@ -39,7 +39,7 @@ def deriv(y, t, N, beta, gamma, sigma):
 y0 = S0, E0, I0, R0
 
 # Real data
-x = [1, 1, 1, 1, 1, 2, 2, 2, 2, 8, 8, 11, 13, 21, 24, 33, 48, 55, 62, 65]
+x = [1, 1, 1, 1, 1, 2, 2, 2, 2, 8, 8, 11, 13, 21, 24, 33, 48, 55, 62, 65, 72]
 
 # Integrate the SEIR equations over the time grid, t.
 ret = odeint(deriv, y0, t, args=(N, beta, gamma, sigma))
