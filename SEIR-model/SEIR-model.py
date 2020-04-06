@@ -55,8 +55,8 @@ S1, E1, I1, R1 = ret.T
 # beta from 1.2 to 2.2 in 20 steps
 step = 20
 for i in range(step):
-   beta =  beta + i / step
-   
+   beta =  beta + step * beta / i
+   print (beta)   
 
 print (S1)
 
