@@ -52,11 +52,13 @@ S1, E1, I1, R1 = ret.T
 
 # Finding beta at the last point
 
-# beta from 1.2 to 2.2 in 20 steps
+# beta from 1.2 to 1.2 + delta in 20 steps
 step = 20
+delta = 1 
 for i in range(step):
-   beta =  beta + step * beta / i
-   print (beta)   
+   b =  beta + delta  * (i + 1) / step
+
+   print (str(i) + " ----- " + str(b))   
 
 print (S1)
 
