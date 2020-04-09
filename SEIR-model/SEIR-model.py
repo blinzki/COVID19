@@ -9,13 +9,19 @@ import math
 # ing.pabloeromero@gmail.com
 # 03/2020
 
-# Chart config
+## Chart config
+
+# General 
 y_axis = 1000000
 x_axis = 120
 
+# Zoom
+y_axis = 200 
+x_axis = 30 
+
 # Model parameters
 N = 992323
-beta = 1.3
+beta = 1.2
 gamma = 1./5
 sigma = 1./7
 
@@ -42,7 +48,7 @@ y0 = S0, E0, I0, R0
 #x = [1, 1, 1, 1, 1, 2, 2, 2, 2, 8, 8, 11, 13, 21, 24, 33, 48, 55, 62, 65, 72]
 
 # Real data Municipo de Rosario
-x = [1, 1, 1, 1, 2, 2, 2, 2, 3, 8, 8, 12, 20, 23, 33, 44, 51, 56, 58, 65, 68]
+x = [1, 1, 1, 1, 2, 2, 2, 2, 3, 8, 8, 12, 20, 23, 33, 44, 51, 56, 58, 65, 68, 73, 76, 77, 79]
 
 
 # Integrate the SEIR equations over period 1  
@@ -77,7 +83,7 @@ ax.plot(t, S1, 'b', alpha=0.5, lw=1, label='Susceptible')
 ax.plot(t, E1, 'y', alpha=0.5, lw=1, label='Exposed')
 ax.plot(t, I1, 'r', alpha=0.5, lw=2, label='Infected')
 ax.plot(t, R1, 'g', alpha=0.5, lw=1, label='Recovered with immunity')
-ax.plot(x, 'o', label='Confirmed cases')
+ax.plot(x, '-', label='Confirmed cases')
 ax.set_xlabel('Time/days')
 ax.set_ylabel('Number')
 ax.set_ylim(0,y_axis)
