@@ -13,15 +13,15 @@ import math
 
 # General 
 y_axis = 1000000
-x_axis = 120
+x_axis = 120 
 
 # Zoom
-y_axis = 200 
-x_axis = 30 
+y_axis = 100 
+x_axis = 35 
 
 # Model parameters
 N = 992323
-beta = 1.2
+beta = 1.58  
 gamma = 1./5
 sigma = 1./7
 
@@ -48,25 +48,29 @@ y0 = S0, E0, I0, R0
 #x = [1, 1, 1, 1, 1, 2, 2, 2, 2, 8, 8, 11, 13, 21, 24, 33, 48, 55, 62, 65, 72]
 
 # Real data Municipo de Rosario
-x = [1, 1, 1, 1, 2, 2, 2, 2, 3, 8, 8, 12, 20, 23, 33, 44, 51, 56, 58, 65, 68, 73, 76, 77, 79, 79, 80]
+x = [1, 1, 1, 1, 2, 2, 2, 2, 3, 8, 8, 12, 20, 23, 33, 44, 51, 56, 58, 65, 68, 73, 76, 77, 79, 79, 80, 81]
 
 
 # Integrate the SEIR equations over period 1  
-beta = 1.2
+
 ret = odeint(deriv, y0, t, args=(N, beta, gamma, sigma))
 S1, E1, I1, R1 = ret.T
 
 # Finding beta at the last point
 
-# beta from 1.2 to 1.2 + delta in 20 steps
+# beta from 0.8 to 1.2 + delta in 20 steps
 step = 20
 delta = 1 
+beta = 0.8
+
+l = len(x)
 for i in range(step):
    b =  beta + delta  * (i + 1) / step
-
-   print (str(i) + " ----- " + str(b))   
-
-print (S1)
+   ret = odeint(deriv, y0, t, args=(N, b, gamma, sigma))
+   S2, E2, I2, R2 = ret.T
+   if x[l-1] > I2[l-1]:
+      beta = b
+      break 
 
 # Print predictions
 for i in range(x_axis):
@@ -81,7 +85,8 @@ ax = fig.add_subplot(111,  axisbelow=True)
 ax.set_title('Rosario SEIR Model COVID-19')
 ax.plot(t, S1, 'b', alpha=0.5, lw=1, label='Susceptible')
 ax.plot(t, E1, 'y', alpha=0.5, lw=1, label='Exposed')
-ax.plot(t, I1, 'r', alpha=0.5, lw=2, label='Infected')
+ax.plot(t, I1, 'r', alpha=0.5, lw=2, label='Infected without containment')
+ax.plot(t, I2, 'r', alpha=0.5, lw=2, label='Infected with containment')
 ax.plot(t, R1, 'g', alpha=0.5, lw=1, label='Recovered with immunity')
 ax.plot(x, '-', label='Confirmed cases')
 ax.set_xlabel('Time/days')

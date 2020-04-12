@@ -1,6 +1,6 @@
 >Author        : Ing. Pablo Eduardo Romero Oestreicher
 
->Last Update   : 10/04/20
+>Last Update   : 11/04/20
 
 >Contact       : ing.pabloeromero@gmail.com
 # Rosario COVID-19
@@ -46,6 +46,7 @@ day Date         Confirmed    Suspected   R0_R    R_P  Prediction
  25 2020-04-08          79           49      -      -           - 
  26 2020-04-09          79           88      -      -           - 
  27 2020-04-10          80           40      -      -           - 
+ 28 2020-04-10          81           51      -      -           - 
  ----------------------------------------------------------------
  30 2020-04-13           -            -      -      -           -   
  39 2020-04-22           -            -      -      -           -
@@ -59,7 +60,7 @@ It is very important to monitor the progress of the disease with confirmed cases
 
 For this, iterations are performed on the model for different values ​​of the Beta parameter. R0_0 is the real Basic Reproduction Rate for the interpolati  on. R0_P is the value of the projected Basic Reproduction Rate for the last known beta.
 
-![SEIR Model COVID-19](/img/seir-interpolation-10-04-20.png)
+![SEIR Model COVID-19](/img/seir-interpolation-11-04-20.png)
 
 ## About SEIR model for COVID 19
 SEIR is a deterministic mathematical model for epidemics. It is currently used to analyze the behavior of the COVID-19 pandemic.
