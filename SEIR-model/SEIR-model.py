@@ -16,8 +16,8 @@ y_axis = 1000000
 x_axis = 120 
 
 # Zoom
-y_axis = 100 
-x_axis = 35 
+#y_axis = 100 
+#x_axis = 35 
 
 # Model parameters
 N = 992323
