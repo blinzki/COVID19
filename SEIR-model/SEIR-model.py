@@ -50,7 +50,6 @@ y0 = S0, E0, I0, R0
 # Real data Municipo de Rosario
 x = [1, 1, 1, 1, 2, 2, 2, 2, 3, 8, 8, 12, 20, 23, 33, 44, 51, 56, 58, 65, 68, 73, 76, 77, 79, 79, 80, 81]
 
-
 # Integrate the SEIR equations over period 1  
 
 ret = odeint(deriv, y0, t, args=(N, beta, gamma, sigma))
