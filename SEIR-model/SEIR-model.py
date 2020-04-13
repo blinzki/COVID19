@@ -16,15 +16,15 @@ y_axis = 1000000
 x_axis = 120 
 
 # Zoom
-y_axis = 100 
-x_axis = 35 
+#y_axis = 100 
+#x_axis = 35 
 
 # Model parameters
 N = 992323
-beta = 1.58  
+beta = 1.38  
 gamma = 1./5
 sigma = 1./7
-
+b1 = beta
 # Initial conditions.
 I0, R0, E0 = 1, 0, 0
 S0 = N - I0 - R0 - E0
@@ -48,7 +48,7 @@ y0 = S0, E0, I0, R0
 #x = [1, 1, 1, 1, 1, 2, 2, 2, 2, 8, 8, 11, 13, 21, 24, 33, 48, 55, 62, 65, 72,,,,,,,93]
 
 # Real data Municipo de Rosario
-x = [1, 1, 1, 1, 2, 2, 2, 2, 3, 8, 8, 12, 20, 23, 33, 44, 51, 56, 58, 65, 68, 73, 76, 77, 79, 79, 80, 81, 84]
+x = [0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 8, 8, 12, 20, 23, 33, 44, 51, 56, 58, 65, 68, 73, 76, 77, 79, 79, 80, 81, 84]
 
 # Integrate the SEIR equations over period 1  
 
@@ -58,8 +58,8 @@ S1, E1, I1, R1 = ret.T
 # Finding beta at the last point
 
 # beta from 0.8 to 1.2 + delta in 20 steps
-step = 20
-delta = 1 
+step = 20000 
+delta = 2 
 beta = 0.8
 
 l = len(x)
@@ -67,27 +67,39 @@ for i in range(step):
    b =  beta + delta  * (i + 1) / step
    ret = odeint(deriv, y0, t, args=(N, b, gamma, sigma))
    S2, E2, I2, R2 = ret.T
-   if x[l-1] > I2[l-1]:
+   #if x[l-1] > I2[l]:
+   print(l-1, I2[l-1], x[l-1], sep='\t')    	
+   if I2[l-1] >= x[l-1]:
       beta = b
       break 
+b2 = beta
 
 # Print predictions
 for i in range(x_axis):
     initd = '2020-03-14'
     date = datetime.strptime(initd, "%Y-%m-%d")
     d = date + timedelta(days=i)
-    print(i,str(d.strftime("%Y-%m-%d")), math.floor(I1[i]), sep='\t')
+    print(i, str(d.strftime("%Y-%m-%d")), math.floor(I1[i]), sep='\t')
+
+# R0 interpolation
+ro1=str(round(b1/gamma, 2))
+ro2=str(round(b2/gamma, 2))
 
 # Plot the data curves: S(t), E(t), I(t) and R(t)
 fig = plt.figure(facecolor='w')
 ax = fig.add_subplot(111,  axisbelow=True)
 ax.set_title('Rosario SEIR Model COVID-19')
-ax.plot(t, S2, 'b', alpha=0.5, lw=1, label='Susceptible')
-ax.plot(t, E2, 'y', alpha=0.5, lw=1, label='Exposed')
-ax.plot(t, I1, 'r', alpha=0.5, lw=2, label='Infected without containment')
-ax.plot(t, I2, 'r', alpha=0.5, lw=2, label='Infected with containment')
-ax.plot(t, R2, 'g', alpha=0.5, lw=1, label='Recovered with immunity')
-ax.plot(x, '-', label='Confirmed cases')
+ax.plot( S2, 'b', alpha=0.5, lw=1, label='Susceptible')
+ax.plot( E2, 'y', alpha=0.5, lw=1, label='Exposed')
+ax.plot( I1, 'r', alpha=0.5, lw=2, label='Infected without containment')
+ax.plot( I2, 'r', alpha=0.5, lw=2, label='Infected with containment')
+ax.plot( I2, 'r', alpha=0.5, lw=2, label='Infected with containment')
+ax.plot( R2, 'g', alpha=0.5, lw=1, label='Recovered with immunity')
+ax.plot( x, '-', label='Confirmed cases')
+#ax.plot( I2, 'o', color='red',label='Confirmed cases')
+
+ax.annotate("$R1_{0}$="+ ro1, xy=(0.9,0.99),xycoords='axes fraction', fontsize=10)
+ax.annotate("$R2_{0}$="+ ro2, xy=(0.9,0.9),xycoords='axes fraction', fontsize=10)
 ax.set_xlabel('Time/days')
 ax.set_ylabel('Number')
 ax.set_ylim(0,y_axis)
