@@ -1,6 +1,6 @@
  >Author        : Ing. Pablo Eduardo Romero Oestreicher
 
->Last Update   : 12/04/20
+>Last Update   : 14/04/20
 
 >Contact       : ing.pabloeromero@gmail.com
 # Rosario COVID-19
@@ -48,6 +48,7 @@ day Date         Confirmed    Suspected   R0_R    R_P  Prediction
  27 2020-04-10          80           40      -      -           - 
  28 2020-04-11          81           51      -      -           - 
  29 2020-04-12          84           36      -      -           - 
+ 30 2020-04-13          85           33      -      -           - 
 
  ----------------------------------------------------------------
 ```
