@@ -13,11 +13,11 @@ import math
 
 # General 
 y_axis = 1000000
-x_axis = 120 
+x_axis = 180 
 
 # Zoom
-#y_axis = 100 
-#x_axis = 35 
+y_axis = 100 
+x_axis = 35 
 
 # Model parameters
 N = 992323
@@ -93,10 +93,9 @@ ax.plot( S2, 'b', alpha=0.5, lw=1, label='Susceptible')
 ax.plot( E2, 'y', alpha=0.5, lw=1, label='Exposed')
 ax.plot( I1, 'r', alpha=0.5, lw=2, label='Infected without containment')
 ax.plot( I2, 'r', alpha=0.5, lw=2, label='Infected with containment')
-ax.plot( I2, 'r', alpha=0.5, lw=2, label='Infected with containment')
 ax.plot( R2, 'g', alpha=0.5, lw=1, label='Recovered with immunity')
 ax.plot( x, '-', label='Confirmed case')
-#ax.plot( I2, 'o', color='red',label='Free containment')
+ax.plot( I2, 'o', color='red',label='Free containment')
 
 ax.annotate("$R1_{0}$="+ ro1, xy=(0.9,0.99),xycoords='axes fraction', fontsize=10)
 ax.annotate("$R2_{0}$="+ ro2, xy=(0.9,0.9),xycoords='axes fraction', fontsize=10)
