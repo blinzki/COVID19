@@ -16,8 +16,8 @@ y_axis = 1000000
 x_axis = 120 
 
 # Zoom
-y_axis = 100 
-x_axis = 35 
+#y_axis = 100 
+#x_axis = 35 
 
 # Model parameters
 N = 992323
@@ -45,10 +45,10 @@ def deriv(y, t, N, beta, gamma, sigma):
 y0 = S0, E0, I0, R0
 
 # Real data Gran Rosario 
-#x = [1, 1, 1, 1, 1, 2, 2, 2, 2, 8, 8, 11, 13, 21, 24, 33, 48, 55, 62, 65, 72,,,,,,,93]
+#x = [1, 1, 1, 1, 1, 2, 2, 2, 2, 8, 8, 11, 13, 21, 24, 33, 48, 55, 62, 65, 72,,,,,,,93. 94, 94]
 
 # Real data Municipo de Rosario
-x = [0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 8, 8, 12, 20, 23, 33, 44, 51, 56, 58, 65, 68, 73, 76, 77, 79, 79, 80, 81, 84, 85]
+x = [0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 8, 8, 12, 20, 23, 33, 44, 51, 56, 58, 65, 68, 73, 76, 77, 79, 79, 80, 81, 84, 85, 85]
 
 # Integrate the SEIR equations over period 1  
 
@@ -59,8 +59,8 @@ S1, E1, I1, R1 = ret.T
 
 # beta from 0.8 to 1.2 + delta in 20 steps
 step = 20000 
-delta = 2 
-beta = 0.8
+delta = 3 
+beta = 0.4
 
 l = len(x)
 for i in range(step):
@@ -79,7 +79,7 @@ for i in range(x_axis):
     initd = '2020-03-14'
     date = datetime.strptime(initd, "%Y-%m-%d")
     d = date + timedelta(days=i)
-    print(i, str(d.strftime("%Y-%m-%d")), math.floor(I1[i]), sep='\t')
+    #print(i, str(d.strftime("%Y-%m-%d")), math.floor(I1[i]), sep='\t')
 
 # R0 interpolation
 ro1=str(round(b1/gamma, 2))
@@ -96,7 +96,7 @@ ax.plot( I2, 'r', alpha=0.5, lw=2, label='Infected with containment')
 ax.plot( I2, 'r', alpha=0.5, lw=2, label='Infected with containment')
 ax.plot( R2, 'g', alpha=0.5, lw=1, label='Recovered with immunity')
 ax.plot( x, '-', label='Confirmed case')
-ax.plot( I2, 'o', color='red',label='Free containment')
+#ax.plot( I2, 'o', color='red',label='Free containment')
 
 ax.annotate("$R1_{0}$="+ ro1, xy=(0.9,0.99),xycoords='axes fraction', fontsize=10)
 ax.annotate("$R2_{0}$="+ ro2, xy=(0.9,0.9),xycoords='axes fraction', fontsize=10)
