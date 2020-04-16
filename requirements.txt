@@ -5,6 +5,4 @@
 numpy
 scipy
 matplotlib
-pylab
 datetime 
-math 
