@@ -1,0 +1,10 @@
+# Library dependencies
+# You need to install these with
+# pip3x install -r requirements.txt 
+
+numpy
+scipy
+matplotlib
+pylab
+datetime 
+math 
