@@ -4,7 +4,7 @@
 
 >Contact       : ing.pabloeromero@gmail.com
 # Rosario COVID-19
-
+![Python application](https://github.com/blinzki/COVID19/workflows/Python%20application/badge.svg)
 Evolution of COVID 19 - Official reports
 Rosario, Santa Fe, Argentina
 
