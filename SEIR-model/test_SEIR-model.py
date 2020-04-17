@@ -22,7 +22,7 @@ def deriv(y, t, N, beta, gamma, sigma):
 def predict(chart_number, date_test):
    
    # Read data file 
-   f = open("../README.md","r")
+   f = open("README.md","r")
    line = f.readline()
    while line != "":
       data = f.readline()
