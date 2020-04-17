@@ -43,7 +43,7 @@ def predict(chart_number, last_day , last_infected, last_exposed):
    print(contents[l + 13])
    contents[4] = ">Last Update   : " + last_day + "\n"
    contents[12] = "![SEIR Model COVID-19](/img/seir-covid19-" + last_day + ".png)\n"
-   contents[ l + 13 ] = "![SEIR Model COVID-19](/img/seir-covid19-" + last_day + ".png)\n"
+   contents[ l + 13 ] = "![SEIR Model COVID-19](/img/seir-interpolation-" + last_day + ".png)\n"
    f = open("README.md", "w")
    contents = "".join(contents)
    f.write(contents)
@@ -129,7 +129,7 @@ def predict(chart_number, last_day , last_infected, last_exposed):
        ax.plot( I2, 'r', alpha=0.5, lw=2, label='Infected with containment')
        ax.plot( R2, 'g', alpha=0.5, lw=1, label='Recovered with immunity')
        ax.plot( x, '-', label='Confirmed case')
-       if chart_number == 1: ax.plot( I2, 'o', color='red',label='Free containment')
+       if k == 1: ax.plot( I2, 'o', color='red',label='Free containment')
 
        ax.annotate("$R1_{0}$="+ ro1, xy=(0.9,0.99),xycoords='axes fraction', fontsize=10)
        ax.annotate("$R2_{0}$="+ ro2, xy=(0.9,0.9),xycoords='axes fraction', fontsize=10)
@@ -155,8 +155,6 @@ def predict(chart_number, last_day , last_infected, last_exposed):
 
        #plt.show()
    return 0
-predict(1, "2020-04-15", 100, 100)
 def test_interpolation():
    __test__ = False
    predict(1, "2020-04-15", 100, 100)
-   predict(2, "2020-04-15", 100, 100)
