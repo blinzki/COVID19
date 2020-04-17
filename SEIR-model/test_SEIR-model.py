@@ -11,6 +11,7 @@ import math
 
 # The SEIR model differential equations.
 def deriv(y, t, N, beta, gamma, sigma):
+
     S, E, I, R = y
     dSdt = -beta * S * I / N
     dEdt = beta * S * I /N - sigma * E
@@ -18,7 +19,7 @@ def deriv(y, t, N, beta, gamma, sigma):
     dRdt = gamma * I
     return dSdt, dEdt, dIdt, dRdt
 
-def predict(chart_number):
+def predict(chart_number, date_test):
 
    # Model parameters
    N = 992323
@@ -45,10 +46,10 @@ def predict(chart_number):
    y0 = S0, E0, I0, R0
 
    # Real data Gran Rosario 
-   #x = [1, 1, 1, 1, 1, 2, 2, 2, 2, 8, 8, 11, 13, 21, 24, 33, 48, 55, 62, 65, 72,,,,,,,93. 94, 94]
+   #x = [1, 1, 1, 1, 1, 2, 2, 2, 2, 8, 8, 11, 13, 21, 24, 33, 48, 55, 62, 65, 72,,,,,,,93, 94, 94, 95]
  
    # Real data Municipo de Rosario
-   x = [0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 8, 8, 12, 20, 23, 33, 44, 51, 56, 58, 65, 68, 73, 76, 77, 79, 79, 80, 81, 84, 85, 85]
+   x = [0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 8, 8, 12, 20, 23, 33, 44, 51, 56, 58, 65, 68, 73, 76, 77, 79, 79, 80, 81, 84, 85, 85, 86]
 
    # Integrate the SEIR equations over period 1  
 
@@ -86,7 +87,7 @@ def predict(chart_number):
    ro2=str(round(b2/gamma, 2))
 
    # Plot the data curves: S(t), E(t), I(t) and R(t)
-   fig = plt.figure(facecolor='w')
+   fig = plt.figure(facecolor='w', figsize=(12, 6))
    ax = fig.add_subplot(111,  axisbelow=True)
    ax.set_title('Rosario SEIR Model COVID-19')
    ax.plot( S2, 'b', alpha=0.5, lw=1, label='Susceptible')
@@ -110,9 +111,13 @@ def predict(chart_number):
 
    for spine in ('top', 'right', 'bottom', 'left'):
        ax.spines[spine].set_visible(False)
+  
+   if chart_number == 1: plt.savefig('../img/seir-interpolation-' + date_test + '.png') 
+   if chart_number == 2: plt.savefig('../img/seir-covid19-' + date_test  + '.png')
 
    plt.show()
  
 def test_interpolation():
    __test__ = False
-   predict(2)
+   predict(1, "15-04-20")
+   predict(2, "15-04-20")
