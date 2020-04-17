@@ -60,8 +60,6 @@ def predict(chart_number, last_day , last_infected, last_exposed):
    I0, R0, E0 = 1, 0, 0
    S0 = N - I0 - R0 - E0
 
-
-
    for k in range(1,3):
 
        if k == 1:
@@ -157,4 +155,4 @@ def predict(chart_number, last_day , last_infected, last_exposed):
    return 0
 def test_interpolation():
    __test__ = False
-   predict(1, "2020-04-15", 100, 100)
+   predict(1, "2020-04-15", 86, 32)
