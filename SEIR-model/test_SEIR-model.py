@@ -20,6 +20,14 @@ def deriv(y, t, N, beta, gamma, sigma):
     return dSdt, dEdt, dIdt, dRdt
 
 def predict(chart_number, date_test):
+   
+   # Read data file 
+   f = open("../README.md","r")
+   line = f.readline()
+   while line != "":
+      data = f.readline()
+      print(data)
+   f.close()  
 
    # Model parameters
    N = 992323
@@ -69,7 +77,7 @@ def predict(chart_number, date_test):
       ret = odeint(deriv, y0, t, args=(N, b, gamma, sigma))
       S2, E2, I2, R2 = ret.T
       #if x[l-1] > I2[l]:
-      print(l-1, I2[l-1], x[l-1], sep='\t')    	
+      #print(l-1, I2[l-1], x[l-1], sep='\t')    	
       if I2[l-1] >= x[l-1]:
          beta = b
          break 
@@ -112,11 +120,17 @@ def predict(chart_number, date_test):
    for spine in ('top', 'right', 'bottom', 'left'):
        ax.spines[spine].set_visible(False)
   
-   if chart_number == 1: plt.savefig('../img/seir-interpolation-' + date_test + '.png') 
-   if chart_number == 2: plt.savefig('../img/seir-covid19-' + date_test  + '.png')
+   if chart_number == 1: plt.savefig('img/seir-interpolation-' + date_test + '.png') 
+   if chart_number == 2: plt.savefig('img/seir-covid19-' + date_test  + '.png')
 
-   plt.show()
+   # write data file 
+   #if chart_number == 1:
+   #   f = open("../README.md","w")       
+   #   f.close()
  
+   plt.show()
+
+
 def test_interpolation():
    __test__ = False
    predict(1, "15-04-20")
