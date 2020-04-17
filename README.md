@@ -19,9 +19,7 @@ Rosario, Santa Fe, Argentina
 ```
 
 Rosario, Argentina
-
 Country Code:AR
-
 City Code   :2000
 
 day Date         Confirmed    Suspected   R0_R    R_P  Prediction
