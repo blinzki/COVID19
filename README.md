@@ -22,8 +22,7 @@ Rosario, Argentina
 Country Code:AR
 City Code   :2000
 
-day Date         Confirmed    Suspected   R0_R    R_P  Prediction
-
+day       Date   Confirmed    Suspected   R0_R    R_P  Prediction
  00 2020-03-14           0            0      -      -           -
  01 2020-03-15           1            0      -      -           -
  02 2020-03-16           1            0      -      -           -
