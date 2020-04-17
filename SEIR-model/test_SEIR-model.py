@@ -33,7 +33,6 @@ def predict(chart_number, last_day , last_infected, last_exposed):
    x.append(last_infected)
 
    # Write content
-
    f = open("README.md", "r")
    contents = f.readlines()
    f.close()
@@ -49,12 +48,10 @@ def predict(chart_number, last_day , last_infected, last_exposed):
    f.write(contents)
    f.close()
 
-
-
    for k in range(1,3):
        # Model parameters
        N = 992323
-       beta = 1.38
+       beta = 1.65
        gamma = 1./5
        sigma = 1./7
        b1 = beta
@@ -62,7 +59,7 @@ def predict(chart_number, last_day , last_infected, last_exposed):
        # Initial conditions.
        I0, R0, E0 = 1, 0, 0
        S0 = N - I0 - R0 - E0
-       
+
        if k == 1:
           y_axis = 100
           x_axis = 35
@@ -83,7 +80,7 @@ def predict(chart_number, last_day , last_infected, last_exposed):
        #x = [0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 8, 8, 12, 20, 23, 33, 44, 51, 56, 58, 65, 68, 73, 76, 77, 79, 79, 80, 81, 84, 85, 85, 86]
 
        # Integrate the SEIR equations over period 1
-
+       print("Beta 1: " + str(beta))
        ret = odeint(deriv, y0, t, args=(N, beta, gamma, sigma))
        S1, E1, I1, R1 = ret.T
 
@@ -96,7 +93,7 @@ def predict(chart_number, last_day , last_infected, last_exposed):
 
        l = len(x)
        for i in range(step):
-          b =  beta + delta  * (i + 1) / step
+          b =  beta + delta * (i + 1) / step
           ret = odeint(deriv, y0, t, args=(N, b, gamma, sigma))
           S2, E2, I2, R2 = ret.T
           #if x[l-1] > I2[l]:
@@ -105,7 +102,7 @@ def predict(chart_number, last_day , last_infected, last_exposed):
              beta = b
              break
        b2 = beta
-
+       print("Beta 2: " + str(beta))
        # Print predictions
        for i in range(x_axis):
           initd = '2020-03-14'
@@ -116,7 +113,6 @@ def predict(chart_number, last_day , last_infected, last_exposed):
        # R0 interpolation
        ro1=str(round(b1/gamma, 2))
        ro2=str(round(b2/gamma, 2))
-
 
        # Plot the data curves: S(t), E(t), I(t) and R(t)
        fig = plt.figure(facecolor='w', figsize=(12, 6))
@@ -154,6 +150,7 @@ def predict(chart_number, last_day , last_infected, last_exposed):
 
        #plt.show()
    return 0
+
 def test_interpolation():
    __test__ = False
    predict(1, "2020-04-15", 86, 32)
