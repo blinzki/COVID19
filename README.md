@@ -54,6 +54,7 @@ day       Date   Confirmed    Suspected   R0_R    R_P  Prediction
  30 2020-04-13          85           33      -      -           - 
  31 2020-04-14          85           40      -      -           - 
  32 2020-04-15          86           32      -      -           - 
+ 31 2020-04-15         100          100      -      -           -
  ----------------------------------------------------------------
 
 ```
@@ -66,7 +67,7 @@ It is very important to monitor the progress of the disease with confirmed cases
 
 For this, iterations are performed on the model for different values ​​of the Beta parameter. R0_0 is the real Basic Reproduction Rate for the interpolati  on. R0_P is the value of the projected Basic Reproduction Rate for the last known beta.
 
-![SEIR Model COVID-19](/img/seir-covid19-2020-04-15.png)
+![SEIR Model COVID-19](/img/seir-interpolation-2020-04-15.png)
 
 ## About SEIR model for COVID 19
 
