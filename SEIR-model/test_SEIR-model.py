@@ -49,19 +49,20 @@ def predict(chart_number, last_day , last_infected, last_exposed):
    f.write(contents)
    f.close()
 
-   # Model parameters
-   N = 992323
-   beta = 1.38
-   gamma = 1./5
-   sigma = 1./7
-   b1 = beta
 
-   # Initial conditions.
-   I0, R0, E0 = 1, 0, 0
-   S0 = N - I0 - R0 - E0
 
    for k in range(1,3):
+       # Model parameters
+       N = 992323
+       beta = 1.38
+       gamma = 1./5
+       sigma = 1./7
+       b1 = beta
 
+       # Initial conditions.
+       I0, R0, E0 = 1, 0, 0
+       S0 = N - I0 - R0 - E0
+       
        if k == 1:
           y_axis = 100
           x_axis = 35
