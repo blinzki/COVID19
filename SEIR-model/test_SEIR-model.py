@@ -60,7 +60,7 @@ def predict(chart_number, last_day , last_infected, last_exposed):
        # Initial conditions.
        I0, R0, E0 = 1, 0, 0
        S0 = N - I0 - R0 - E0
-       print(k)
+
        if k == 1:
           y_axis = 1000000
           x_axis = 180
@@ -69,6 +69,7 @@ def predict(chart_number, last_day , last_infected, last_exposed):
           x_axis = 35
 
        # Grid of time
+       print(x_axis)
        t = np.linspace(0, x_axis, x_axis)
 
        # Initial conditions vector
@@ -152,6 +153,8 @@ def predict(chart_number, last_day , last_infected, last_exposed):
 
        #plt.show()
    return 0
+
+predict(1, "2020-04-15", 86, 32)
 def test_interpolation():
    __test__ = False
    predict(1, "2020-04-15", 86, 32)
