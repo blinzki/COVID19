@@ -37,7 +37,7 @@ def predict(chart_number, last_day , last_infected, last_exposed):
    contents = f.readlines()
    f.close()
    num = str(l - 25).zfill(2)
-   contents.insert(l, " " + num + " " + last_day + str(last_infected).rjust(12) +" " +  str(last_exposed).rjust(12) +"      -      -           -"  + '\n')
+   contents.insert(l + 2, " " + num + " " + last_day + str(last_infected).rjust(12) +" " +  str(last_exposed).rjust(12) +"      -      -           -"  + '\n')
    #print(contents[70])
    print(contents[l + 13])
    contents[4] = ">Last Update   : " + last_day + "\n"

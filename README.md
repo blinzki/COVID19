@@ -53,9 +53,9 @@ day       Date   Confirmed    Suspected   R0_R    R_P  Prediction
  29 2020-04-12          84           36      -      -           - 
  30 2020-04-13          85           33      -      -           - 
  31 2020-04-14          85           40      -      -           - 
- 30 2020-04-15          86           32      -      -           -
  ----------------------------------------------------------------
 
+ 30 2020-04-15          86           32      -      -           -
 ```
 
 You can find the official reports here: ![Official data COVID-19](/reports)
