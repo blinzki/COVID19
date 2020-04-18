@@ -61,7 +61,6 @@ def predict(chart_number, last_day , last_infected, last_exposed):
        I0, R0, E0 = 1, 0, 0
        S0 = N - I0 - R0 - E0
 
-
        if k == 1:
           y_axis = 1000000
           x_axis = 180
