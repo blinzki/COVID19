@@ -61,10 +61,10 @@ def predict(chart_number, last_day , last_infected, last_exposed):
        I0, R0, E0 = 1, 0, 0
        S0 = N - I0 - R0 - E0
 
-       if k == 1:
+       if k == 2:
           y_axis = 100
           x_axis = 35
-       if k == 2:
+       if k == 1:
           y_axis = 1000000
           x_axis = 180
 
@@ -126,7 +126,7 @@ def predict(chart_number, last_day , last_infected, last_exposed):
        ax.plot( I2, 'r', alpha=0.5, lw=2, label='Infected with containment')
        ax.plot( R2, 'g', alpha=0.5, lw=1, label='Recovered with immunity')
        ax.plot( x, '-', label='Confirmed case')
-       if k == 1: ax.plot( I2, 'o', color='red',label='Free containment')
+       if k == 2: ax.plot( I2, 'o', color='red',label='Free containment')
 
        ax.annotate("$R1_{0}$="+ ro1, xy=(0.9,0.99),xycoords='axes fraction', fontsize=10)
        ax.annotate("$R2_{0}$="+ ro2, xy=(0.9,0.9),xycoords='axes fraction', fontsize=10)
@@ -142,8 +142,8 @@ def predict(chart_number, last_day , last_infected, last_exposed):
        for spine in ('top', 'right', 'bottom', 'left'):
            ax.spines[spine].set_visible(False)
 
-       if k == 1: plt.savefig('img/seir-interpolation-' + last_day + '.png')
-       if k == 2: plt.savefig('img/seir-covid19-' + last_day  + '.png')
+       if k == 2: plt.savefig('img/seir-interpolation-' + last_day + '.png')
+       if k == 1: plt.savefig('img/seir-covid19-' + last_day  + '.png')
 
        # write data file
        #if chart_number == 1:
