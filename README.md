@@ -53,9 +53,8 @@ day       Date   Confirmed    Suspected   R0_R    R_P  Prediction
  29 2020-04-12          84           36      -      -           - 
  30 2020-04-13          85           33      -      -           - 
  31 2020-04-14          85           40      -      -           - 
+ 32 2020-04-15          86           32      -      -           -
  ----------------------------------------------------------------
-
- 30 2020-04-15          86           32      -      -           -
 ```
 
 You can find the official reports here: ![Official data COVID-19](/reports)
@@ -67,7 +66,7 @@ It is very important to monitor the progress of the disease with confirmed cases
 For this, iterations are performed on the model for different values ​​of the Beta parameter. R0_0 is the real Basic Reproduction Rate for the interpolati  on. R0_P is the value of the projected Basic Reproduction Rate for the last known beta.
 
 ![SEIR Model COVID-19](/img/seir-interpolation-2020-04-15.png)
-
+![SEIR Model COVID-19](/img/seir-interpolation-2020-04-15.png)
 ## About SEIR model for COVID 19
 
 SEIR is a deterministic mathematical model for epidemics. It is currently used to analyze the behavior of the COVID-19 pandemic.
