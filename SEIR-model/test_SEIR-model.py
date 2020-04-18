@@ -61,12 +61,13 @@ def predict(chart_number, last_day , last_infected, last_exposed):
        I0, R0, E0 = 1, 0, 0
        S0 = N - I0 - R0 - E0
 
-       if k == 2:
-          y_axis = 100
-          x_axis = 35
+
        if k == 1:
           y_axis = 1000000
           x_axis = 180
+       elif k == 2:
+         y_axis = 100
+         x_axis = 35
 
        # Grid of time
        t = np.linspace(0, x_axis, x_axis)
