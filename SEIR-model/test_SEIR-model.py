@@ -93,16 +93,17 @@ def predict(chart_number, last_day , last_infected, last_exposed):
        beta = 0.4
 
        l = len(x)
-       for i in range(step):
-          b =  beta + delta * (i + 1) / step
-          ret = odeint(deriv, y0, t, args=(N, b, gamma, sigma))
-          S2, E2, I2, R2 = ret.T
-          #if x[l-1] > I2[l]:
-          #print(l-1, I2[l-1], x[l-1], sep='\t')
-          if I2[l-1] >= x[l-1]:
-             beta = b
-             break
-       b2 = beta
+       if k == 1:
+           for i in range(step):
+              b =  beta + delta * (i + 1) / step
+              ret = odeint(deriv, y0, t, args=(N, b, gamma, sigma))
+              S2, E2, I2, R2 = ret.T
+              #if x[l-1] > I2[l]:
+              #print(l-1, I2[l-1], x[l-1], sep='\t')
+              if I2[l-1] >= x[l-1]:
+                 beta = b
+                 break
+           b2 = beta
        print("Beta 2: " + str(beta))
        # Print predictions
        for i in range(x_axis):
