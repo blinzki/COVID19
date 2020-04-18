@@ -43,6 +43,7 @@ def predict(chart_number, last_day , last_infected, last_exposed):
    contents[4] = ">Last Update   : " + last_day + "\n"
    contents[12] = "![SEIR Model COVID-19](/img/seir-covid19-" + last_day + ".png)\n"
    contents[ l + 13 ] = "![SEIR Model COVID-19](/img/seir-interpolation-" + last_day + ".png)\n"
+
    f = open("README.md", "w")
    contents = "".join(contents)
    f.write(contents)
@@ -153,4 +154,4 @@ def predict(chart_number, last_day , last_infected, last_exposed):
 
 def test_interpolation():
    __test__ = False
-   predict(1, "2020-04-16", 88, 50)
+   predict(1, "2020-04-15", 86, 32)
