@@ -69,7 +69,7 @@ def predict(chart_number, last_day , last_infected, last_exposed):
           x_axis = 35
 
        # Grid of time
-       print(x_axis)
+
        t = np.linspace(0, x_axis, x_axis)
 
        # Initial conditions vector
@@ -134,6 +134,8 @@ def predict(chart_number, last_day , last_infected, last_exposed):
        ax.set_xlabel('Time/days')
        ax.set_ylabel('Number')
        ax.set_ylim(0,y_axis)
+       print(x_axis)
+       ax.set_xlim(0,x_axis)
        ax.yaxis.set_tick_params(length=0)
        ax.xaxis.set_tick_params(length=1)
        ax.grid(b=True, which='major', c='w', lw=2, ls='-')
@@ -154,7 +156,7 @@ def predict(chart_number, last_day , last_infected, last_exposed):
        #plt.show()
    return 0
 
-predict(1, "2020-04-15", 86, 32)
+#predict(1, "2020-04-15", 86, 32)
 def test_interpolation():
    __test__ = False
    predict(1, "2020-04-15", 86, 32)
