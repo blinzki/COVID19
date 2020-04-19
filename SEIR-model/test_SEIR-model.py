@@ -111,7 +111,7 @@ def predict(chart_number, last_day , last_infected, last_exposed):
           initd = '2020-03-14'
           date = datetime.strptime(initd, "%Y-%m-%d")
           d = date + timedelta(days=i)
-          #print(i, str(d.strftime("%Y-%m-%d")), math.floor(I1[i]), sep='\t')
+          print(i, str(d.strftime("%Y-%m-%d")), math.floor(I1[i]), sep='\t')
 
        # R0 interpolation
        ro1=str(round(b1/gamma, 2))
@@ -134,6 +134,7 @@ def predict(chart_number, last_day , last_infected, last_exposed):
        ax.set_xlabel('Time/days')
        ax.set_ylabel('Number')
        ax.set_ylim(0,y_axis)
+       ax.set_ylim(0,x_axis)
        ax.yaxis.set_tick_params(length=0)
        ax.xaxis.set_tick_params(length=1)
        ax.grid(b=True, which='major', c='w', lw=2, ls='-')
