@@ -56,7 +56,7 @@ def predict(chart_number, last_day , last_infected, last_exposed):
        gamma = 1./5
        sigma = 1./7
        b1 = beta
-       x_axis = 35
+       x_axis = 40
        # Initial conditions.
        I0, R0, E0 = 1, 0, 0
        S0 = N - I0 - R0 - E0
@@ -66,7 +66,7 @@ def predict(chart_number, last_day , last_infected, last_exposed):
           x_axis = 180
        elif k == 2:
           y_axis = 100
-          x_axis = 35
+          x_axis = 40
 
        # Grid of time
 
@@ -156,7 +156,6 @@ def predict(chart_number, last_day , last_infected, last_exposed):
        #plt.show()
    return 0
 
-#predict(1, "2020-04-15", 86, 32)
 def test_interpolation():
    __test__ = False
-   predict(1, "2020-04-18", 95, 64)
+   predict(1, "2020-04-19", 96, 78)
