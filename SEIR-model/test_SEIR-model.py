@@ -65,8 +65,8 @@ def predict(chart_number, last_day , last_infected, last_exposed):
           y_axis = 1000000
           x_axis = 180
        elif k == 2:
-          y_axis = 100
-          x_axis = 40
+          y_axis = 120
+          x_axis = 60
 
        # Grid of time
 
@@ -158,4 +158,4 @@ def predict(chart_number, last_day , last_infected, last_exposed):
 
 def test_interpolation():
    __test__ = False
-   predict(1, "2020-04-28", 98, 68)
+   predict(1, "2020-04-29", 98, 54)
