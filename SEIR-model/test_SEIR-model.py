@@ -158,4 +158,4 @@ def predict(chart_number, last_day , last_infected, last_exposed):
 
 def test_interpolation():
    __test__ = False
-   predict(1, "2020-04-27", 98, 104)
+   predict(1, "2020-04-28", 98, 68)
