@@ -2,7 +2,7 @@
 
 >Author        : Ing. Pablo Eduardo Romero Oestreicher
 
->Last Update   : 2020-05-08
+>Last Update   : 2020-05-11
 
 # Rosario COVID-19
 
@@ -10,7 +10,7 @@ Evolution of COVID 19 - Official reports
 
 Rosario, Santa Fe, Argentina
 
-![SEIR Model COVID-19](/img/seir-covid19-2020-05-08.png)
+![SEIR Model COVID-19](/img/seir-covid19-2020-05-11.png)
 
 ## Data COVID-19
 
@@ -77,6 +77,9 @@ day       Date   Confirmed    Suspected   R0_R    R_P  Prediction
  53 2020-05-06          98           37      -      -           -
  54 2020-05-07          98           57      -      -           -
  55 2020-05-08          98           49      -      -           -
+ 56 2020-05-09          98           40      -      -           -
+ 57 2020-05-10          98          106      -      -           -
+ 58 2020-05-11          98           62      -      -           -
  ----------------------------------------------------------------
 
 ```
@@ -89,7 +92,7 @@ It is very important to monitor the progress of the disease with confirmed cases
 
 For this, iterations are performed on the model for different values ​​of the Beta parameter. R0_0 is the real Basic Reproduction Rate for the interpolati  on. R0_P is the value of the projected Basic Reproduction Rate for the last known beta.
 
-![SEIR Model COVID-19](/img/seir-interpolation-2020-05-08.png)
+![SEIR Model COVID-19](/img/seir-interpolation-2020-05-11.png)
 
 ## About SEIR model for COVID 19
 
