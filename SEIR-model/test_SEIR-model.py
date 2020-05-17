@@ -63,7 +63,7 @@ def predict(chart_number, last_day , last_infected, last_exposed):
 
        if k == 1:
           y_axis = 1000000
-          x_axis = 180
+          x_axis = 240 
        elif k == 2:
           y_axis = 120
           x_axis = 60
@@ -158,4 +158,4 @@ def predict(chart_number, last_day , last_infected, last_exposed):
 
 def test_interpolation():
    __test__ = False
-   predict(1, "2020-05-13", 98, 57)
+   predict(1, "2020-05-14", 98, 79)
