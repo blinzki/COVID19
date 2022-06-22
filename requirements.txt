@@ -2,7 +2,7 @@
 # You need to install these with
 # pip3x install -r requirements.txt 
 
-numpy==1.18.2
+numpy==1.22.0
 scipy==1.4.1
 matplotlib==3.2.1
 datetime==4.3 
